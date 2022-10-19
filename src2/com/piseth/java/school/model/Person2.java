@@ -1,24 +1,22 @@
 package com.piseth.java.school.model;
 
-import java.sql.Array;
-
 public class Person2 {
 	private String name;
 	private String gender;
 	private int age;
-	private Array pets;
+	private String pet;
 
-	public Person2(String name, String gender, int age, Array pets) {
+	public Person2(String name, String gender, int age, String pet) {
 		super();
 		this.name = name;
 		this.gender = gender;
 		this.age = age;
-		this.pets = pets;
+		this.pet = pet;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [name=" + name + ", gender=" + gender + ", age=" + age + ", pets=" + pets + "]";
+		return "Person [name=" + name + ", gender=" + gender + ", age=" + age + ", pet={" + pet + "}]";
 	}
 
 	public String getName() {
@@ -45,12 +43,12 @@ public class Person2 {
 		this.age = age;
 	}
 
-	public Array getPets() {
-		return pets;
+	public String getPet() {
+		return pet;
 	}
 
-	public void setPets(Array pets) {
-		this.pets = pets;
+	public void setPet(String pet) {
+		this.pet = pet;
 	}
 
 }

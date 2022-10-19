@@ -2,60 +2,51 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 14.5
--- Dumped by pg_dump version 14.5
-
--- Started on 2022-10-08 14:13:04
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
-SET default_tablespace = '';
-
-SET default_table_access_method = heap;
-
 --
--- TOC entry 209 (class 1259 OID 16497)
--- Name: persons; Type: TABLE; Schema: public; Owner: village_adm
+-- TOC entry 3317 (class 0 OID 24700)
+-- Dependencies: 212
+-- Data for Name: pets; Type: TABLE DATA; Schema: public; Owner: village_adm
 --
 
-CREATE TABLE public.persons (
-    name character varying NOT NULL,
-    gender character varying NOT NULL,
-    age integer,
-    pet character varying[]
-);
+INSERT INTO public.pets (id, type) VALUES (1, 'Cat');
+INSERT INTO public.pets (id, type) VALUES (2, 'Dog');
+INSERT INTO public.pets (id, type) VALUES (3, 'Bird');
+INSERT INTO public.pets (id, type) VALUES (4, 'Fish');
+INSERT INTO public.pets (id, type) VALUES (5, 'Rabbit');
 
-
-ALTER TABLE public.persons OWNER TO village_adm;
 
 --
--- TOC entry 3301 (class 0 OID 16497)
--- Dependencies: 209
--- Data for Name: persons; Type: TABLE DATA; Schema: public; Owner: village_adm
+-- TOC entry 3315 (class 0 OID 24694)
+-- Dependencies: 210
+-- Data for Name: villagers; Type: TABLE DATA; Schema: public; Owner: village_adm
 --
 
-INSERT INTO public.persons VALUES ('Dara', 'MALE', 18, '{CAT}');
-INSERT INTO public.persons VALUES ('Thida', 'FEMALE', 17, '{DOG}');
-INSERT INTO public.persons VALUES ('Dalin', 'FEMALE', 19, '{DOG,CAT}');
-INSERT INTO public.persons VALUES ('Veasna', 'MALE', 16, '{}');
-INSERT INTO public.persons VALUES ('Sopheak', 'FEMALE', 17, '{FISH}');
-INSERT INTO public.persons VALUES ('Vannda', 'MALE', 21, '{BIRD}');
-INSERT INTO public.persons VALUES ('Nary', 'FEMALE', 23, '{DOG,BIRD,CAT}');
-INSERT INTO public.persons VALUES ('Pisey', 'FEMALE', 19, '{CAT,RABBIT}');
-INSERT INTO public.persons VALUES ('Sovann', 'MALE', 18, '{CAT}');
-INSERT INTO public.persons VALUES ('Vannary', 'FEMALE', 20, '{FISH}');
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Dara', 'Male', 18, 1);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Thida', 'Female', 17, 2);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Dalin', 'Female', 19, 1);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Dalin', 'Female', 19, 2);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Veasna', 'Male', 16, NULL);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Sopheak', 'Female', 17, 4);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Vannda', 'Male', 21, 3);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Nary', 'Female', 23, 1);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Nary', 'Female', 23, 2);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Nary', 'Female', 23, 3);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Pisey', 'Female', 19, 1);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Pisey', 'Female', 19, 5);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Sovann', 'Male', 18, 1);
+INSERT INTO public.villagers (name, gender, age, pet_id) VALUES ('Vannary', 'Female', 20, 4);
 
 
--- Completed on 2022-10-08 14:13:04
+--
+-- TOC entry 3325 (class 0 OID 0)
+-- Dependencies: 211
+-- Name: pets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: village_adm
+--
+
+SELECT pg_catalog.setval('public.pets_id_seq', 5, true);
+
+
+-- Completed on 2022-10-19 10:05:18
 
 --
 -- PostgreSQL database dump complete
